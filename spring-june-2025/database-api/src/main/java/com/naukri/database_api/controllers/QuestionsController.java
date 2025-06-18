@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1/db/question")
 public class QuestionsController {
 
     QuestionRepository questionRepository;

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/form")
+@RequestMapping("/api/v1/db/form")
 public class ApplicationFormController {
 
     ApplicationFormRepository applicationFormRepository;

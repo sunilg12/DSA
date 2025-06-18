@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/formSubmission")
+@RequestMapping("/api/v1/db/formSubmission")
 public class FormSubmissionController {
 
     FormSubmissionRepository formSubmissionRepository;

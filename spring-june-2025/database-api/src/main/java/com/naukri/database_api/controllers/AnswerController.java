@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/answer")
+@RequestMapping("/api/v1/db/answer")
 public class AnswerController {
 
     AnswerRepository answerRepository;
