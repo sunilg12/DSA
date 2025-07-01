@@ -28,7 +28,7 @@ public class AppUserController {
     // So to create the user object we will have all the property set but only id property will not be set
     // Hibernate will see as this user object is not having id property set
     // So, I Should create a new record inside user table.
-    appUserRepository.save(user);
+    user = appUserRepository.save(user);
     return new ResponseEntity(user, HttpStatus.CREATED);
   }
 
@@ -38,11 +38,17 @@ public class AppUserController {
     return new ResponseEntity<>(user, HttpStatus.OK);
   }
 
+  @GetMapping("/email/{emailId}")
+  public ResponseEntity getUserByEmail(@PathVariable String emailId){
+    AppUser user  =appUserRepository.findByEmail(emailId);
+    return new ResponseEntity<>(user, HttpStatus.OK);
+  }
+
   @PutMapping("/update")
   public ResponseEntity updateUser(@RequestBody AppUser user){
     // This user object will have some of the fields updated.
-    // And to update user it should definetly have id in it
-    // Update -> We use update functinality only when the record is already present in the database.
+    // And to update user it should definitely have id in it
+    // Update -> We use update functionality only when the record is already present in the database.
     // You need to do what ? You need to update some of its field
     // So, hibernate is saying if in your user object already id property is set already
     // So, I will do what i am going to search the record which is having the same Id which you are passing in user object

@@ -19,4 +19,5 @@ public class Questions {
     @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
     String question;
+    boolean isMandatory;
 }

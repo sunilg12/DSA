@@ -27,6 +27,8 @@ public class Job {
     @Column(nullable = false)
     String jobDescription;
     @OneToOne
+    Company company;
+    @OneToOne
     ApplicationForm applicationForm;
     @ManyToOne
     AppUser createdBy; // This is the recruiter who created the job

@@ -26,6 +26,7 @@ public class AppUser {
     String email;
     @Column(nullable = false)
     String password;
+    String status;
     @Column(unique = true, nullable = false)
     Long phoneNumber;
     String userType;

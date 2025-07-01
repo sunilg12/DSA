@@ -27,9 +27,15 @@ public class SkillController {
         return new ResponseEntity(skills, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity getSkillById(@PathVariable UUID id){
         Skill skill = skillRepository.findById(id).orElse(null);
+        return new ResponseEntity(skill, HttpStatus.OK);
+    }
+
+    @GetMapping("/get/name/{skillName}")
+    public ResponseEntity<Skill> getSkillById(@PathVariable String skillName){
+        Skill skill = skillRepository.findByName(skillName);
         return new ResponseEntity(skill, HttpStatus.OK);
     }
 
